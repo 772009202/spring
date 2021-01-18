@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# idea的文件
+*.iml
+.idea
+# eclipse的文件
+.classpath
+.project
+.settings
+# 生成的文件
+*.log
+target
