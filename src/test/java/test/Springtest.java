@@ -1,4 +1,4 @@
-package com.chenyu.test;
+package test;
 
 import com.chenyu.config.Config;
 import com.chenyu.other.ContextAwareTest;
@@ -30,7 +30,7 @@ public class Springtest {
     }
 
     UserService userService = Springtest.context.getBean("userService", UserService.class);
-    userService.printUser();
+    //    userService.printUser();
     /** 销毁单例对象 */
     Springtest.context.close();
   }

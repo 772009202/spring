@@ -1,4 +1,4 @@
-package com.chenyu.custom;
+package test;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;

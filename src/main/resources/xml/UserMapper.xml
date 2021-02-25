@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="com.chenyu.dao.UserDao">
+
+    <!-- 增加 -->
+    <insert id="addUser" parameterType="com.chenyu.entity.User">
+        insert into user(id,userName,passWord)
+        values(#{id},#{userName},#{userId})
+    </insert>
+
+    <select id="sumAll" resultType="com.chenyu.entity.Count">
+        SELECT id as num,userName from user
+    </select>
+</mapper>

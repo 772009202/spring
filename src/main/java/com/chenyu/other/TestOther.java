@@ -16,6 +16,6 @@ import org.springframework.stereotype.Component;
 public class TestOther {
 
   public TestOther() {
-    System.out.println("testOther无参构造函数被调");
+    //    System.out.println("testOther无参构造函数被调");
   }
 }

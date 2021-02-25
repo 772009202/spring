@@ -15,7 +15,8 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 
   public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName)
       throws BeansException {
-    System.out.println("MyInstantiationAwareBeanPostProcessor:" + beanName);
+
+    //    System.out.println("MyInstantiationAwareBeanPostProcessor:" + beanName);
     return null;
   }
 
@@ -23,10 +24,10 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
     XmlBeanFactory context = new XmlBeanFactory(new ClassPathResource("applicationContext.xml"));
     //    ApplicationContext context =
     //        new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-    for (String e : context.getBeanDefinitionNames()) {
-      System.out.println("beanName:" + e);
-    }
-
-    System.out.println("bean的数量:" + context.getBeanDefinitionCount());
+    //    for (String e : context.getBeanDefinitionNames()) {
+    //      System.out.println("beanName:" + e);
+    //    }
+    //
+    //    System.out.println("bean的数量:" + context.getBeanDefinitionCount());
   }
 }

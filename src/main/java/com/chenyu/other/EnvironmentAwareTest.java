@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class EnvironmentAwareTest implements EnvironmentAware {
   public void setEnvironment(Environment environment) {
-    System.out.println(environment.getProperty("os.name") + "你好");
+    //    System.out.println(environment.getProperty("os.name") + "你好");
   }
 }

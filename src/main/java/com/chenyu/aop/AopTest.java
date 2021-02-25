@@ -1,7 +1,11 @@
 package com.chenyu.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.Signature;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
@@ -23,27 +27,32 @@ public class AopTest {
 
   @Around("printLog()")
   public void around(ProceedingJoinPoint joinPoint) throws Throwable {
-    System.out.println("环绕通知前");
+    Signature signature = joinPoint.getSignature();
+
+    System.out.println("环绕监听的方法" + signature.getName());
     joinPoint.proceed();
-    System.out.println("环绕通知后");
+    //    System.out.println("环绕通知后");
   }
 
-  @Before("printLog()")
-  public void before() {
-    System.out.println("前置通知");
-  }
+  //  @Before("printLog()")
+  //  public void before() {
+  //    System.out.println("前置通知");
+  //  }
+  //
+  //  @After("printLog()")
+  //  public void after() {
+  //    System.out.println("后置通知");
+  //  }
+  //
+  //  @AfterReturning("printLog()")
+  //  public void afterRun() {
+  //    System.out.println("运行时通知");
+  //  }
 
-  @After("printLog()")
-  public void after() {
-    System.out.println("后置通知");
-  }
-
-  @AfterReturning("printLog()")
-  public void afterRun() {
-    System.out.println("运行时通知");
-  }
-
-  /** 异常通知就不会走运行通知 */
+  /**
+   * 异常通知就不会走运行通知 <br>
+   * 事务的实现其实就是怎么实现的
+   */
   @AfterThrowing("printLog()")
   public void afterThrow() {
     System.out.println("异常通知");
